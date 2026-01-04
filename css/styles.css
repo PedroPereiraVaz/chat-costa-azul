@@ -165,8 +165,8 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 400px; /* Reduced width for better UX, or keep 800 if intended */
-  height: 600px; /* Adjusted height */
+  width: 80%; 
+  height: 80%;
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -180,9 +180,9 @@ body {
 }
 
 .chat-widget.minimized {
-  height: 60px; /* Only show header */
-  width: 250px; /* Detailed smaller width when minimized */
-  border-radius: 30px; /* Pill shape when minimized */
+  height: 60px;
+  width: 250px;
+  border-radius: 30px;
 }
 
 .chat-header {
