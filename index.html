@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Costa Azul | Lujo & Confort</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">Costa Azul</div>
+      <nav class="nav">
+        <a href="#" class="nav-link">Suites</a>
+        <a href="#" class="nav-link">Gastronomía</a>
+        <a href="#" class="nav-link">Experiencias</a>
+        <a href="#" class="nav-link btn-book">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero ejemplo -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Experiencia Inolvidable</h1>
+      <p class="hero-subtitle">Descubre el equilibrio perfecto entre lujo y naturaleza.</p>
+    </div>
+  </section>
+
+  <!-- Seccion ejemplo -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-item">
+          <h3>Relax Total</h3>
+          <p>Sumérgete en nuestras aguas termales y olvida el mundo exterior.</p>
+        </div>
+        <div class="info-item">
+          <h3>Alta Cocina</h3>
+          <p>Sabores locales fusionados con técnicas internacionales de vanguardia.</p>
+        </div>
+        <div class="info-item">
+          <h3>Vistas Únicas</h3>
+          <p>Cada habitación ofrece una panorámica exclusiva del océano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header" id="chatHeader">
+      <span>Asistente Virtual</span>
+      <span class="toggle-icon">−</span>
+    </div>
+    <div class="chat-body">
+      <script SameSite="None; Secure" type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+      <div id="myLandbot" style="width: 100%; height: 100%"></div>
+      <script type="module">
+        var myLandbot = new Landbot.Container({
+          container: '#myLandbot',
+          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3290678-MRY9RBUB5TICU4KZ/index.json',
+        });
+      </script>
+    </div>
+    <script>
+      const chatWidget = document.getElementById('chatWidget');
+      const chatHeader = document.getElementById('chatHeader');
+      const toggleIcon = chatHeader.querySelector('.toggle-icon');
+
+      chatHeader.addEventListener('click', () => {
+        chatWidget.classList.toggle('minimized');
+        if (chatWidget.classList.contains('minimized')) {
+          toggleIcon.textContent = '+';
+        } else {
+          toggleIcon.textContent = '−';
+        }
+      });
+    </script>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Hotel Costa Azul. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>

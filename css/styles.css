@@ -1,0 +1,209 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1a2a3a; /* Deep Navy */
+  --accent-color: #c5a059; /* Muted Gold */
+  --text-color: #333;
+  --light-bg: #fdfdfd;
+  --white: #ffffff;
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--text-color);
+  /* Strict 100vh Layout */
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Header - Absolute to float over Hero */
+/* Header - Absolute to float over Hero */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 2.5rem 0; /* Increased top/bottom padding to move it down */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical centering */
+  width: 90%; /* Restrict width so it's not edge-to-edge */
+  max-width: 1400px; /* Cap width for very large screens */
+  margin: 0 auto; /* Center the container */
+  padding: 0; /* Remove side padding since we use width % */
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1; /* Fix visual vertical center */
+}
+
+.nav {
+  display: flex;
+  gap: 3rem; /* Little more space */
+  align-items: center; /* Ensure items inside nav are centered */
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link.btn-book {
+  border: 1px solid var(--white);
+  padding: 0.5rem 1rem;
+}
+
+/* Hero Section - Takes available space */
+.hero {
+  flex: 1; /* Grows to fill space */
+  position: relative;
+  background: linear-gradient(rgba(26, 42, 58, 0.5), rgba(26, 42, 58, 0.3)),
+    url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+      center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: var(--white);
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+/* Info Section - Compact */
+.info-section {
+  flex: 0 0 auto; /* Don't grow, just take needed space */
+  padding: 2.5rem 0;
+  background-color: var(--light-bg);
+}
+
+.info-grid {
+  display: flex; /* Simpler than grid for this row */
+  justify-content: space-around;
+  gap: 2rem;
+  text-align: center;
+}
+
+.info-item {
+  flex: 1;
+}
+
+.info-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  font-size: 0.85rem;
+  color: #555;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Footer - Minimal */
+.footer {
+  flex: 0 0 auto;
+  background-color: var(--primary-color);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+/* --- Chatbot Widget Styles --- */
+.chat-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 400px; /* Reduced width for better UX, or keep 800 if intended */
+  height: 600px; /* Adjusted height */
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: var(--font-body);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-widget.minimized {
+  height: 60px; /* Only show header */
+  width: 250px; /* Detailed smaller width when minimized */
+  border-radius: 30px; /* Pill shape when minimized */
+}
+
+.chat-header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.chat-body {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
