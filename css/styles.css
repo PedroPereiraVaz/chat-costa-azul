@@ -165,7 +165,7 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 80%; 
+  width: 700px;
   height: 80%;
   background: var(--white);
   border-radius: 12px;
